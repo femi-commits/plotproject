@@ -83,6 +83,19 @@ alias kubectl="minikube kubectl --"
 9.  Create a CICD pipeline using the Jenkinsfile in the repo
 
 10.  Configure a webhook from github so that each commit triggers a build on the Jenkins server
+
+11. Get the Ingress external IP address:
+
+```bash
+kubectl get ingress
+```
+
+12. Access the Flask app using the external IP address/path and also externail IP address:nodePort to show that the app is accessible from the internet:
+
+```bash
+curl http://<external_ip_address>
+curl http://<external_ip_address>:nodePort
+```
        
 
 
