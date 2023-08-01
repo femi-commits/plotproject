@@ -98,7 +98,7 @@ curl http://<external_ip_address>/plotly
 
 ## Continuous Delivery Plan
 
-To implement continuous delivery for the Flask app, we can set up a CI/CD pipeline using tools like Jenkins, GitLab CI/CD, or GitHub Actions. The pipeline will automate the building, testing, and deployment process. Here is a general outline of the CI/CD plan:
+To implement continuous delivery for the Flask app, a CI/CD pipeline using Jenkins, GitLab CI/CD, or GitHub Actions would be setup to automate the building, testing, and deployment process. Here is a general outline of the CI/CD plan:
 
 1. Set up a version control system (e.g., Git) to store the Flask app code.
 2. Configure a CI/CD tool to monitor the version control system for changes and trigger builds on every commit to the main branch.
