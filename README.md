@@ -109,6 +109,7 @@ To implement continuous delivery for the Flask app, a CI/CD pipeline using Jenki
 3. The CI/CD pipeline includes steps for building the Docker image and pushing the image to a container registry (e.g., Docker Hub, Google Container Registry).
 4. Once the image is pushed to the container registry, the pipeline triggers a Kubernetes deployment to update the running application with the latest version.
 5. For rolling updates, the pipeline can use Helm to manage the deployment and ensure zero-downtime updates.
+6. Scalability: Plan for horizontal scalability of the application by utilizing Kubernetes features like Horizontal Pod Autoscaler (HPA) and Kubernetes cluster auto-scaling.
 
 
 
