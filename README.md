@@ -4,22 +4,23 @@
 
 # Flask App Deployment with Kubernetes
 
-This repository contains a Flask application that allows users to create, read, update, and delete users in a MySQL database. The goal is to demonstrate how to deploy this Flask application using Kubernetes.
+This repository contains a Flask application with which users can be created, read, updated, and deleted in a MySQL database. The goal is to demonstrate how to deploy this Flask application using Kubernetes (Minikube).
 
 ## Prerequisites
 
-Before deploying the Flask app with Kubernetes, make sure you have the following prerequisites installed:
+Before deploying the Flask app with Kubernetes, have the following prerequisites installed:
 
 1. Docker: [Installation Guide](https://docs.docker.com/get-docker/)
 2. Kubernetes: [Minikube Installation](https://minikube.sigs.k8s.io/docs/start/)
 3. `kubectl`: [Kubectl Installation](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 4. Helm: [Helm Installation](https://helm.sh/docs/intro/install/)
+5. Terraform: 
 
 ## Application Structure
 
 The Flask application is structured as follows:
 
-- `app.py`: Main Flask application file containing the API endpoints.
+- `userapi.py`: Main Flask application file containing the API endpoints.
 - `requirements.txt`: File containing the Python dependencies required by the Flask app.
 - `Dockerfile`: File for building the Docker image of the Flask app.
 - `kubectl`: Kubernetes manifest files for deploying the Flask app.
@@ -30,14 +31,14 @@ The Flask application is structured as follows:
 1. Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/flask-app-kubernetes.git
-cd flask-app-kubernetes
+git clone https://github.com/femi-commits/plotproject.git
+cd app
 ```
 
 2. Build the Docker image of the Flask app:
 
 ```bash
-docker build -t flask-app:latest .
+docker build -t plotly_image .
 ```
 
 3. Run the Docker container locally to ensure the app is working correctly:
