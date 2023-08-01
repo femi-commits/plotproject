@@ -15,6 +15,7 @@ spec:
         app: plotly
     spec:
       containers:
+      - name: plotly-container
       - image: olufemib/plotly_image
 ---
 apiVersion: v1
