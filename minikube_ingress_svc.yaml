@@ -16,8 +16,7 @@ metadata:
   name: plotly-ingress
 spec:
   rules:
-    - host: 192.168.49.2
-      http:
+    - http:
         paths:
           - pathType: Prefix
             path: /
