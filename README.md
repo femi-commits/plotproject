@@ -85,48 +85,7 @@ alias kubectl="minikube kubectl --"
 10.  Configure a webhook from github so that each commit triggers a build on the Jenkins server
        
 
-```bash
-docker login -u
-docker push <docker_repo/plotly_image>
-```
 
-7. Docker login and push the app to Dockerhub:
-
-```bash
-docker login -u
-docker push <docker_repo/plotly_image>
-```
-
-7. Docker log and push the app to Dockerhub:
-
-```bash
-docker login -u
-docker push <docker_repo/plotly_image>
-```
-
-8. Check the status of the deployment:
-
-```bash
-kubectl get pods
-```
-
-9. Expose the Flask app externally using an Ingress resource:
-
-```bash
-kubectl apply -f ingress.yaml
-```
-
-10. Get the Ingress external IP address:
-
-```bash
-kubectl get ingress
-```
-
-11. Access the Flask app using the external IP address or domain:
-
-```bash
-curl http://<external_ip_address>
-```
 
 ## Continuous Delivery Plan
 
