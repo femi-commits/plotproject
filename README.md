@@ -106,17 +106,11 @@ To implement continuous delivery for the Flask app, we can set up a CI/CD pipeli
 4. Once the image is pushed to the container registry, the pipeline can trigger a Kubernetes deployment to update the running application with the latest version.
 5. For rolling updates, the pipeline can use Helm to manage the deployment and ensure zero-downtime updates.
 
-## Contributing
 
-Feel free to contribute to this project by submitting pull requests with improvements, bug fixes, or new features. Your contributions are highly appreciated!
 
-## License
 
-This project is licensed under the [MIT License](LICENSE).
 
 ---
-Replace `<your-username>` in the repository URL with your actual GitHub username.
 
-This `Readme.md` file provides an overview of the project, instructions for deploying the Flask app with Kubernetes, and a brief outline of the continuous delivery plan. You can customize it further to include specific details about your Flask app, deployment process, and any additional information that might be helpful for users and contributors.
 
-Remember to include any specific setup instructions or configurations needed for the project, and keep the `Readme.md` file up-to-date as the project evolves.
+This `Readme.md` file provides an overview of the project, instructions for deploying the Flask app with Kubernetes, and a brief outline of the continuous delivery plan. 
