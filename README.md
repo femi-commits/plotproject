@@ -63,13 +63,45 @@ docker rm <container_id>
 6. Initialize Minikube and ensure it's running:
 
 ```bash
-minikube start
+minikube start --driver=docker
 ```
 
-7. Deploy the Flask app to Kubernetes using Helm:
+7. You can also make your life easier so that you can make kubectl commands instead of having to type minikube kubectl:
 
 ```bash
-helm install flask-app ./helm-charts/flask-app
+alias kubectl="minikube kubectl --"
+```
+
+8. Install jenkins:
+   https://www.jenkins.io/doc/book/installing/linux/
+   7a. Add Jenkins User to docker group  
+       sudo usermod -aG docker jenkins  
+   7b. Restart Jenkins
+        sudo systemctl restart jenkins
+   7c. Configure Jenkins to make kubectl commands by ensuring that the kubectl configuration file (usually located at ~/.kube/config) is present on the Jenkins server and contains the        necessary credentials and cluster information to access your Minikube cluster.
+
+9.  Create a CICD pipeline using the Jenkinsfile in the repo
+
+10.  Configure a webhook from github so that each commit triggers a build on the Jenkins server
+       
+
+```bash
+docker login -u
+docker push <docker_repo/plotly_image>
+```
+
+7. Docker login and push the app to Dockerhub:
+
+```bash
+docker login -u
+docker push <docker_repo/plotly_image>
+```
+
+7. Docker log and push the app to Dockerhub:
+
+```bash
+docker login -u
+docker push <docker_repo/plotly_image>
 ```
 
 8. Check the status of the deployment:
@@ -93,17 +125,17 @@ kubectl get ingress
 11. Access the Flask app using the external IP address or domain:
 
 ```bash
-curl http://<external_ip_address>/plotly
+curl http://<external_ip_address>
 ```
 
 ## Continuous Delivery Plan
 
-To implement continuous delivery for the Flask app, a CI/CD pipeline using Jenkins, GitLab CI/CD, or GitHub Actions would be setup to automate the building, testing, and deployment process. Here is a general outline of the CI/CD plan:
+To implement continuous delivery for the Flask app, a CI/CD pipeline using Jenkins was setup to automate the building and deployment process. Here is a general outline of the CI/CD plan:
 
 1. Set up a version control system (e.g., Git) to store the Flask app code.
 2. Configure a CI/CD tool to monitor the version control system for changes and trigger builds on every commit to the main branch.
-3. The CI/CD pipeline should include steps for building the Docker image, running tests, and pushing the image to a container registry (e.g., Docker Hub, Google Container Registry).
-4. Once the image is pushed to the container registry, the pipeline can trigger a Kubernetes deployment to update the running application with the latest version.
+3. The CI/CD pipeline includes steps for building the Docker image and pushing the image to a container registry (e.g., Docker Hub, Google Container Registry).
+4. Once the image is pushed to the container registry, the pipeline triggers a Kubernetes deployment to update the running application with the latest version.
 5. For rolling updates, the pipeline can use Helm to manage the deployment and ensure zero-downtime updates.
 
 
