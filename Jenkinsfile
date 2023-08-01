@@ -4,7 +4,6 @@ pipeline {
     environment {
         DOCKER_REPO = "olufemib"
         DOCKER_IMAGE = "plotly_image"
-        KUBE_CONFIG = "/path/to/your/kubeconfig"
     }
 
     stages {
@@ -28,15 +27,10 @@ pipeline {
             }
         }
 
-        stage('Check Deployment Status') {
-            steps {
-                sh "kubectl --kubeconfig=${KUBE_CONFIG} get pods"
-            }
-        }
 
         stage('Deploy to Kubernetes') {
             steps {
-                sh "kubectl --kubeconfig=${KUBE_CONFIG} apply -f ingress.yaml"
+                sh "kubectl apply -f deploy_svc_ingress.yaml"
             }
         }
 
