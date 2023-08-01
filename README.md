@@ -14,7 +14,7 @@ Before deploying the Flask app with Kubernetes, have the following prerequisites
 2. Kubernetes: [Minikube Installation](https://minikube.sigs.k8s.io/docs/start/)
 3. `kubectl`: [Kubectl Installation](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 4. Helm: [Helm Installation](https://helm.sh/docs/intro/install/)
-5. Terraform: 
+5. Terraform: [Terraform Installation](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 
 ## Application Structure
 
