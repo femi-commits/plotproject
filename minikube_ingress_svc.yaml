@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: plotly-container
-      - image: olufemib/plotly_image
+        image: olufemib/plotly_image
 ---
 apiVersion: v1
 kind: Service
